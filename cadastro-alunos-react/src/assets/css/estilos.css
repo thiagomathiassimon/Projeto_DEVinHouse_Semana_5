@@ -32,7 +32,7 @@ h2 {
 }
 
 form {
-  text-align: left;
+  text-align: justify;
   margin-left: 5%;
   margin-right: 5%;
   background-color: aliceblue;
@@ -44,12 +44,11 @@ form {
 
 label {
   font-weight: bold;
-  margin-left: 1%;
-  margin-right: 1%;
   cursor: pointer;
 }
 
 input {
+  width: 100%;
   border: 5px;
   border: solid;
   border-color: blueviolet;
@@ -58,6 +57,7 @@ input {
 }
 
 select {
+  width: 101%;
   border: 5px;
   border: solid;
   border-color: blueviolet;
@@ -68,4 +68,38 @@ select {
 hr {
   background-color: blueviolet;
   padding: 5px;
+}
+
+button {
+  cursor: pointer;
+  text-align: center;
+  background-color: aliceblue;
+  font-weight: bold;
+  color: blueviolet;
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+  padding: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#cancelar {
+  width: 30%;
+  margin-right: 1%;
+}
+
+#cadastrar {
+  width: 30%;
+}
+
+table {
+  margin-left: 1%;
+  width: 50%;
+  text-align: left;
+}
+
+td {
+  text-align: left;
+  width: 60%;
 }
