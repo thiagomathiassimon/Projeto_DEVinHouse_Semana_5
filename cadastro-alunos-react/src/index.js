@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './assets/css/estilos.css'
-import Pagina from './components/pagina'
-//import App from './App';
+import Alunos from './pages/alunos'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Pagina />
+    <Alunos />
   </React.StrictMode>,
   document.getElementById('root')
 );

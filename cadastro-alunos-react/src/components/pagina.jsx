@@ -10,7 +10,6 @@ class Pagina extends React.Component {
             <h1>🍇Escola Amorinha</h1>
             <hr />
           </div>
-          <h2>{this.props.title}</h2>
           {this.props.children}
         </div>
       </>

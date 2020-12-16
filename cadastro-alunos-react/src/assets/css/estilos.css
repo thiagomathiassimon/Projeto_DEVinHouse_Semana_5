@@ -15,6 +15,56 @@
   top: 0%;
 }
 
+h1 {
+  margin-left: 1%;
+}
+
+h2 {
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  background-color: aliceblue;
+  color: blueviolet;
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+}
+
+form {
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: aliceblue;
+  color: blueviolet;
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+}
+
+label {
+  font-weight: bold;
+  margin-left: 1%;
+  margin-right: 1%;
+  cursor: pointer;
+}
+
+input {
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+select {
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
 hr {
   background-color: blueviolet;
   padding: 5px;
