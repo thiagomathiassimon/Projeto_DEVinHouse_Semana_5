@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import './assets/css/estilos.css'
+import Pagina from './components/pagina'
+//import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Pagina />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,21 @@
+.paginaPrincipal {
+
+  background-color: turquoise;
+  text-align: center;
+  height: 100vh;
+  color: white;
+}
+
+.cabecalho {
+  background-color: aliceblue;
+  color: blueviolet;
+  text-align: left;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0%;
+}
+
+hr {
+  background-color: blueviolet;
+  padding: 5px;
+}
