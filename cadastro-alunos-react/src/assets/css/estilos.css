@@ -1,6 +1,6 @@
 .paginaPrincipal {
 
-  background-color: turquoise;
+  background-color: lightskyblue;
   text-align: center;
   height: 100vh;
   color: white;
@@ -85,12 +85,12 @@ button {
 }
 
 #cancelar {
-  width: 30%;
+  width: 40%;
   margin-right: 1%;
 }
 
 #cadastrar {
-  width: 30%;
+  width: 40%;
 }
 
 table {
@@ -101,5 +101,14 @@ table {
 
 td {
   text-align: left;
-  width: 60%;
+  width: 65%;
+}
+
+
+#restricaoAlimentarSim {
+  width: fit-content;
+}
+
+#restricaoAlimentarNao {
+  width: fit-content;
 }
