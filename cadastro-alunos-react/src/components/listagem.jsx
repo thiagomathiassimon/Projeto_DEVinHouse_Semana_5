@@ -41,8 +41,9 @@ class Listagem extends React.Component {
                   <td className='listandoAlunos'>{aluno.turma}</td>
                   <td className='listandoAlunos'>{aluno.telefoneEmergencia}</td>
                   <td className='listandoAlunos'>{aluno.avisarEmEmergencia}</td>
-                  <td className='listandoAlunos'><button onClick={() => this.handleEditar(aluno)}>Editar</button>
-                    <button onClick={() => this.handleExcluir(aluno)}>Excluir</button></td>
+                  <td className='listandoAlunos'>
+                    <button className="btnLista" onClick={() => this.handleEditar(aluno)}>Editar</button>
+                    <button className="btnLista" onClick={() => this.handleExcluir(aluno)}>Excluir</button></td>
                 </tr>
               ))}
             </tbody>
