@@ -2,7 +2,7 @@
 
   background-color: lightskyblue;
   text-align: center;
-  height: 100vh;
+  height: 100%;
   color: white;
 }
 
@@ -130,4 +130,75 @@ textarea {
   margin-top: 1%;
   margin-bottom: 1%;
   resize: none;
+}
+
+.lista {
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: aliceblue;
+  color: blueviolet;
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+}
+
+.listaAlunos {
+  background-color: aliceblue;
+  color: blueviolet;
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 1%;
+  width: 90%;
+  text-align: center;
+}
+
+.listarAlunos {
+  background-color: aliceblue;
+  color: blueviolet;
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#pesquisaNaLista {
+  cursor: pointer;
+  width: 20%;
+  margin: 1%;
+}
+
+#labelDaPesquisa {
+  margin-left: 1%;
+}
+
+#searchButton {
+  padding: 0%;
+  width: 5%;
+  margin: 0%;
+}
+
+th {
+  width: 15%;
+  background-color: aliceblue;
+  color: blueviolet;
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+
+}
+
+.listandoAlunos {
+  width: 15%;
+  background-color: aliceblue;
+  color: blueviolet;
+  border: 5px;
+  border: solid;
+  border-color: blueviolet;
+
 }
