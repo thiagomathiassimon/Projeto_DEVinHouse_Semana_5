@@ -108,7 +108,7 @@ class Formulario extends React.Component {
           enableRenitialize
           validateOnMount={true}
           validationSchema={AlunoSchema}
-          initialValues={this.valorInicial()}
+          initialValues={this.props.aluno || ALUNO_INICIAL}
           onSubmit={(values, actions) => {
             console.log(values)
             this.salvarAluno(values, actions)
@@ -214,6 +214,7 @@ class Formulario extends React.Component {
                       </>}
                   </tr>
                   <tr>
+                    {console.log(values.autorizados)}
                     <Field
                       component={Autorizados}
                       fullWidth
@@ -264,8 +265,22 @@ class Formulario extends React.Component {
                   <tr>
                     <td />
                     <td>
-                      <button id='cancelar'>Novo</button>
-                      <button id='cadastrar'>Cadastrar</button>
+                      <button id='cancelar' onClick={() => {
+                        const checkboxSim = document.getElementById("restricaoAlimentarSim");
+                        const checkboxNao = document.getElementById("restricaoAlimentarNao");
+                        const checkbox = document.getElementById('autorizaImagens');
+                        checkbox.checked = false;
+                        checkboxNao.checked = false;
+                        checkboxSim.checked = false;
+                        const input = document.getElementById('autorizacao')
+                        const select = document.getElementById("parentesco")
+                        input.value = ""
+                        select.value = ""
+                        const lista = document.getElementById('listaAutorizados')
+                        lista.innerHTML = ""
+                        handleReset(ALUNO_INICIAL)
+                      }}>Novo</button>
+                      <button id='cadastrar'>Salvar</button>
                     </td>
                   </tr>
                 </tbody>

@@ -36,9 +36,7 @@ class Autorizados extends Component {
         <td>
           <Field name="autorizacao" id="autorizacao" placeholder="Nome..."
             onChange={e => this.handleChangeNome(e.target.value)} />
-          <Field as="select" nome="parentesco" id="parentesco"
-          // onChange={e => this.handleChangeParentesco(e.target.value)} 
-          >
+          <Field as="select" name="parentesco" id="parentesco" onChange={e => this.handleChangeParentesco(e.target.value)}>
             <option value="">Grau de parentesco</option>
             <option value="Pai">Pai</option>
             <option value="Mãe">Mãe</option>
@@ -47,16 +45,29 @@ class Autorizados extends Component {
             <option value="Avô">Avô</option>
             <option value="Avó">Avó</option>
           </Field>
+          <div>
+            {console.log(this.props.autorizados, this.props.autorizados.lenght)}
+
+            {this.props.autorizados &&
+              this.props.autorizados.map(nome => {
+                console.log(this.props.autorizados)
+                return (<>
+                  <div id="listaAutorizados"><br /><span>{`Nome: ${nome.nome}`} < br />{`Parentesco: ${nome.parentesco}`}</span></div></>
+                )
+              })}
+          </div>
         </td>
         <td>
-          <IconButton color="primary" onClick={() => this.adicionarAutorizacao({ ...this.state })}>
+          <IconButton color="primary" onClick={() => {
+            const input = document.getElementById('autorizacao')
+            const select = document.getElementById("parentesco")
+            input.value = ""
+            select.value = ""
+            this.adicionarAutorizacao({ ...this.state })
+          }}>
             <AddIcon />
           </IconButton>
-          {
-            this.props.autorizados && this.props.autorizados.lenght > 0 &&
-            this.props.autorizados.map(nome =>
-              <InputLabel>{`Nome: ${nome.nome} - Parentesco: ${nome.parentesco}`}</InputLabel>
-            )}
+
         </td>
       </>
     )
