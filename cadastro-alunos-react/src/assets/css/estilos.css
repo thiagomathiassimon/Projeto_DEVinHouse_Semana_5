@@ -171,6 +171,9 @@ textarea {
   cursor: pointer;
   width: 20%;
   margin: 1%;
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
+  padding-left: 0.25%;
 }
 
 #labelDaPesquisa {
@@ -179,9 +182,22 @@ textarea {
 
 #searchButton {
   padding: 0%;
+  padding-top: 0.15%;
+  padding-bottom: 0.15%;
   width: 5%;
   margin: 0%;
 }
+
+#backButton {
+  margin-left: 1%;
+  padding: 0%;
+  padding-right: 1%;
+  padding-left: 1%;
+  padding-top: 0.15%;
+  padding-bottom: 0.15%;
+}
+
+
 
 th {
   width: 15%;
@@ -206,5 +222,5 @@ th {
 
 .btnLista {
   margin-left: 2%;
-  width: fit-content;
+  width: 40%;
 }

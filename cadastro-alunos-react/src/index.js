@@ -3,7 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './assets/css/estilos.css'
 import Alunos from './pages/alunos'
+import { criarServidor } from './services/mirage-server';
 import reportWebVitals from './reportWebVitals';
+
+const ambiente = process.env.NODE_ENV;
+if (ambiente !== "production") {
+  criarServidor({ environment: ambiente });
+}
 
 ReactDOM.render(
   <React.StrictMode>
