@@ -34,7 +34,7 @@ const AlunoSchema = yup.object().shape({
 
 class Formulario extends React.Component {
 
-  state = { teveAlteracao: false, possuiRestricao: false }
+  state = { teveAlteracao: false, possuiRestricao: false, emEdicao: false }
 
   valorInicial() {
     console.log("passando no método valorInicial()")
@@ -105,7 +105,7 @@ class Formulario extends React.Component {
     return (
       <>
         <Formik
-          enableRenitialize
+          enableReinitialize
           validateOnMount={true}
           validationSchema={AlunoSchema}
           initialValues={this.props.aluno || ALUNO_INICIAL}
@@ -115,7 +115,7 @@ class Formulario extends React.Component {
           }}
           render={({ values, touched, errors, isSubmitting, handleReset, setFieldTouched, setFieldValue }) => (
             < Form >
-              {console.log(values)}
+              {console.log("values", values)}
               { console.log("Teste", this.props.aluno)}
               <table>
                 <thead></thead>

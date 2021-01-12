@@ -31,8 +31,9 @@ class Alunos extends Component {
     this.setState({ alunos: alunos });
   }
 
-  editarAlunos = alunos => {
-    this.setState({ alunoEmEdicao: alunos });
+  editarAlunos = aluno => {
+    console.log("aluno", aluno)
+    this.setState({ alunoEmEdicao: aluno });
   }
 
   excluirAlunos(aluno) {
@@ -59,7 +60,7 @@ class Alunos extends Component {
       <>
         <Pagina>
           <Section titulo='Cadastro de Alunos'>
-            {console.log(this.alunoEmEdicao)}
+            {console.log("oi", this.state.alunoEmEdicao)}
             <Formulario aluno={this.state.alunoEmEdicao} salvar={this.salvarAluno} />
           </Section>
           <Section titulo='Listagem de Alunos'>

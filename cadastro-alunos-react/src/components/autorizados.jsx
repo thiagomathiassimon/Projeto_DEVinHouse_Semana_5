@@ -46,7 +46,7 @@ class Autorizados extends Component {
             <option value="Avó">Avó</option>
           </Field>
           <div>
-            {console.log(this.props.autorizados, this.props.autorizados.lenght)}
+
 
             {this.props.autorizados &&
               this.props.autorizados.map(nome => {
