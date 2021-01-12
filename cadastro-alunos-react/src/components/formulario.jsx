@@ -2,7 +2,7 @@ import React from 'react';
 import Autorizados from './autorizados'
 import { Field, Form, Formik } from "formik";
 import * as yup from 'yup';
-import { mask, unMask } from 'remask'
+import MaskedInput from "react-text-mask";
 
 const ALUNO_INICIAL = {
   nome: "",
@@ -31,6 +31,38 @@ const AlunoSchema = yup.object().shape({
   turma: yup.string().required("Informe a turma"),
   //informacoesAdicionais: yup.string()
 });
+
+const dateNumberMask = [
+  /[1-9]/,
+  /\d/,
+  "/",
+  /\d/,
+  /\d/,
+  "/",
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/
+]
+
+const phoneNumberMask = [
+  "(",
+  /[1-9]/,
+  /\d/,
+  ")",
+  " ",
+  /\d/,
+  " ",
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+  "-",
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/
+];
 
 class Formulario extends React.Component {
 
@@ -90,16 +122,6 @@ class Formulario extends React.Component {
     setFieldValue(name, autorizados)
   }
 
-  mascaraTelefone(value) {
-    return value
-      .replace(/\D/g, " ")
-      .replace(/(\d{2})(\d)/, '($1) $2')
-      .replace(/(\d{4})(\d)/, '$1-$2')
-      .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
-      .replace(/(-\d{4})\d+?$/, '$1')
-  }
-
-
   render() {
     console.log("this.props.aluno do formulario.jsx", this.props.aluno)
     return (
@@ -131,7 +153,22 @@ class Formulario extends React.Component {
                     <td>
                       <label htmlFor="dataNascimento">Informe a data de nascimento do(a) aluno(a):</label></td>
                     <td>
-                      <Field type="date" name='dataNascimento' placeholder='Data de nascimento...' /></td>
+                      <Field type="text" name='dataNascimento' render={({ field }) => (
+                        <MaskedInput
+                          {...field}
+                          mask={dateNumberMask}
+                          id="dataNascimento"
+                          placeholder="Informe a data de nascimento"
+                          type="text"
+                          className={
+                            errors.dataNascimento && touched.dataNascimento
+                              ? "text-input error"
+                              : "text-input"
+                          }
+                        />
+                      )}
+                      />
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -146,7 +183,20 @@ class Formulario extends React.Component {
                       <label htmlFor="telefoneResponsavel">Informe o telefone do(a) responsável:</label>
                     </td>
                     <td>
-                      <Field type="number" name='telefoneResponsavel' placeholder='9999-9999 ou 9999-99999'
+                      <Field type="number" name='telefoneResponsavel' placeholder='9999-9999 ou 9999-99999' render={({ field }) => (
+                        <MaskedInput
+                          {...field}
+                          mask={phoneNumberMask}
+                          id="phone"
+                          placeholder="Enter your phone number"
+                          type="text"
+                          className={
+                            errors.phone && touched.phone
+                              ? "text-input error"
+                              : "text-input"
+                          }
+                        />
+                      )}
                       />
                     </td>
                   </tr>
@@ -168,7 +218,21 @@ class Formulario extends React.Component {
                       <label htmlFor="telefoneEmergencia">Informe o telefone de emergência:</label>
                     </td>
                     <td>
-                      <Field type="number" name='telefoneEmergencia' placeholder='9999-9999 ou 9999-99999' />
+                      <Field type="number" name='telefoneEmergencia' render={({ field }) => (
+                        <MaskedInput
+                          {...field}
+                          mask={phoneNumberMask}
+                          id="telefoneEmergencia"
+                          placeholder="Informe o telefone de emergência"
+                          type="text"
+                          className={
+                            errors.telefoneEmergencia && touched.telefoneEmergencia
+                              ? "text-input error"
+                              : "text-input"
+                          }
+                        />
+                      )}
+                      />
                     </td>
                   </tr>
                   <tr>
